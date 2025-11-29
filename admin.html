@@ -1,60 +1,74 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Admin — Bible Kids</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-<header class="site-header container">
+
+<header class="site-header container" role="banner">
   <div class="brand">
-    <div class="logo">BK</div>
+    <div class="logo" aria-hidden="true">BK</div>
     <div>
-      <div style="font-weight:700">Bible Kids Admin</div>
-      <div class="small">Manage Stories • Games • Users</div>
+      <div style="font-weight:700">Bible Kids</div>
+      <div class="small">Learn • Play • Grow</div>
     </div>
   </div>
 
-  <button class="nav-toggle"><span></span><span></span><span></span></button>
+  <!-- Hamburger icon -->
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-  <nav class="site-nav">
+  <!-- Navigation items -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <a class="nav-btn" href="index.html">Home</a>
-    <a class="nav-btn" href="admin.html">Dashboard</a>
-    <a class="nav-btn" href="login.html">Logout</a>
+    <a class="nav-btn" href="story.html">Stories</a>
+    <a class="nav-btn" href="game.html">Games</a>
+    <a class="nav-btn" href="parent.html">Parent</a>
+    <a class="nav-btn" href="login.html">Login</a>
+    <a class="nav-btn" href="register.html">Register</a>
+    <a class="nav-btn" href="admin.html">Admin</a>
+    <a class="nav-btn" href="leaderboard.html">Leaderboard</a>
+    
   </nav>
 </header>
 
+
 <main class="container">
 
-  <h1 class="h1-kid">📊 Admin Dashboard</h1>
+  <h2 class="h1-kid">Admin Dashboard</h2>
 
-  <div class="grid-3">
+  <div class="grid-3" style="margin-top:1rem">
 
     <div class="card">
-      <h3>Stories</h3>
-      <p class="small">Manage story uploads</p>
-      <a class="kid-btn" href="#">Go</a>
+      <h3 class="card-title">📘 Manage Stories</h3>
+      <p class="small">Add, edit or remove stories</p>
+      <a href="#" class="kid-btn">Open</a>
     </div>
 
     <div class="card">
-      <h3>Games</h3>
-      <p class="small">Add or edit games</p>
-      <a class="kid-btn" href="#">Go</a>
+      <h3 class="card-title">🎮 Manage Games</h3>
+      <p class="small">Add or configure mini-games</p>
+      <a href="#" class="kid-btn">Open</a>
     </div>
 
     <div class="card">
-      <h3>Users</h3>
-      <p class="small">View children & parents</p>
-      <a class="kid-btn" href="#">Go</a>
+      <h3 class="card-title">👨‍👩‍👧 Users</h3>
+      <p class="small">View kids & parent accounts</p>
+      <a href="#" class="kid-btn">Open</a>
     </div>
 
   </div>
 
 </main>
 
-<footer class="site-footer">Bible Kids © 2025</footer>
+<footer class="site-footer">Bible Kids Admin © 2025</footer>
+
 <script src="js/script.js"></script>
 </body>
 </html>
