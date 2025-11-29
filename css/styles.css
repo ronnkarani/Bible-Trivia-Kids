@@ -1,0 +1,407 @@
+/* css/styles.css
+   Frontend-only design for children's Bible learning platform
+   Mobile-first, responsive, accessible
+*/
+
+/* ========== Variables & reset ========== */
+:root{
+  --bg:#fbfbff;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent-1:#6ea8fe;    /* sky blue */
+  --accent-2:#ffb86b;    /* warm orange */
+  --accent-3:#9ae6b4;    /* mint */
+  --accent-4:#ffd7f0;    /* pastel pink */
+  --text:#0f172a;
+  --kid-font: "Comic Sans MS", "Trebuchet MS", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ui-radius:14px;
+  --card-radius:18px;
+  --gap:1rem;
+  --max-width:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #f7fbff 0%, var(--bg) 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.35;
+  
+}
+
+/* Utility container */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:1rem;
+}
+
+/* Simple row/cols */
+.row{
+  display:flex;
+  gap:var(--gap);
+  flex-wrap:wrap;
+}
+.col{flex:1 1 0;}
+
+/* Card base */
+.card{
+  background:var(--card);
+  border-radius:var(--card-radius);
+  box-shadow: 0 6px 18px rgba(12, 24, 60, 0.06);
+  padding:1rem;
+}
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+
+/* NAV */
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:0.75rem 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+}
+.logo{
+  width:52px; height:52px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--accent-1), var(--accent-3));
+  display:flex;align-items:center;justify-content:center;color:white;font-weight:700;
+  font-family:var(--kid-font);
+  box-shadow: 0 6px 14px rgba(110,168,254,0.18);
+}
+.site-nav{display:flex;gap:0.5rem; align-items:center;}
+.nav-btn{
+  background:transparent;border:none;padding:0.4rem 0.8rem;border-radius:10px;font-size:0.95rem;color:var(--muted);
+}
+.nav-btn:focus, .nav-btn:hover{background:rgba(15,23,42,0.03); color:var(--text); outline:none}
+
+/* ===============================
+   Responsive Navbar + Mobile Menu
+==================================*/
+
+.nav-toggle {
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:4px;
+  padding:0.5rem;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.nav-toggle span {
+  width:24px;
+  height:3px;
+  background:var(--text);
+  border-radius:3px;
+  transition:0.3s ease;
+}
+
+/* Mobile state */
+@media(max-width:768px){
+
+  .site-nav {
+    position:absolute;
+    top:70px;
+    right:1rem;
+    left:1rem;
+    background:white;
+    border-radius:16px;
+    padding:1rem;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    display:none;
+    flex-direction:column;
+    gap:0.75rem;
+    animation:fadeDown 0.25s ease forwards;
+  }
+
+  @keyframes fadeDown {
+    from {opacity:0; transform:translateY(-10px);}
+    to {opacity:1; transform:translateY(0);}
+  }
+
+  .site-nav.show {
+    display:flex;
+  }
+
+  .nav-toggle {
+    display:flex;
+  }
+
+  /* Hide desktop nav format */
+  .site-nav a, .site-nav button {
+    text-align:left;
+    width:100%;
+    padding:0.7rem 1rem;
+    font-size:1rem;
+    border-radius:12px;
+    background:#f9f9ff;
+  }
+}
+
+/* Kid Dashboard hero */
+.hero{
+  margin-top:0.5rem;
+  display:grid;
+  gap:1rem;
+  grid-template-columns: 1fr;
+}
+.hero-card{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  padding:1rem;
+  border-radius:16px;
+  background: linear-gradient(90deg,#fff 0%, #f7fbff 50%);
+}
+.hero-left{flex:1}
+.hero-right{
+  width:200px; height:200px;
+  border-radius:12px;
+  background:url('https://placehold.co/400x400') center/cover no-repeat;
+  box-shadow: 0 12px 30px rgba(17,24,39,0.06);
+  min-width:160px;
+}
+
+/* big heading for kids */
+.h1-kid{
+  font-family:var(--kid-font);
+  font-size:1.6rem;
+  margin:0 0 0.4rem 0;
+  color:var(--text);
+}
+.lead{
+  margin:0;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+/* grid for sections */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+  width: 100%;
+  align-items: stretch; /* IMPORTANT */
+}
+.grid-3 .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+  background: #ffffff;
+  box-shadow:
+      6px 6px 14px rgba(0,0,0,0.06),
+      -6px -6px 14px rgba(255,255,255,0.9);
+}
+.grid-3 .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  box-shadow:
+      3px 3px 6px rgba(0,0,0,0.06),
+      -3px -3px 6px rgba(255,255,255,0.9);
+}
+
+
+.card {
+  padding: 1.2rem;
+}
+.story-thumb img {
+  height: 190px;
+}
+
+/* story card */
+.story-thumb{
+  display:block;
+  border-radius:12px;
+  overflow:hidden;
+  position:relative;
+  background:#f3f7ff;
+}
+.story-thumb img{width:100%; display:block; height:160px; object-fit:cover}
+.story-meta{
+  display:flex; justify-content:space-between; align-items:center; padding:0.6rem 0.5rem;
+}
+.story-title{font-weight:700; font-size:1rem}
+.story-sub{font-size:0.85rem; color:var(--muted)}
+
+/* progress UI */
+.progress{
+  background: linear-gradient(90deg,#e7f1ff,#fff);
+  padding:0.8rem;
+  border-radius:12px;
+}
+.progress-row{display:flex;gap:0.6rem;align-items:center}
+.progress-bar{
+  background:#e6eefc;border-radius:10px;height:12px;flex:1;position:relative;overflow:hidden
+}
+.progress-fill{
+  height:100%; width:55%;
+  background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
+}
+
+/* badges */
+.badge-list{display:flex;gap:0.6rem;flex-wrap:wrap}
+.badge{
+  border-radius:10px; padding:0.45rem 0.6rem; display:flex; gap:0.5rem; align-items:center;
+  background:linear-gradient(180deg,#fff,#fff);
+  box-shadow: 0 6px 14px rgba(255, 184, 107, 0.08);
+  font-weight:600;
+  font-size:0.9rem;
+}
+
+/* quiz card */
+.quiz-card{display:flex; gap:0.75rem; align-items:center}
+.quiz-score{
+  font-size:1.1rem; font-weight:700; color:var(--accent-2);
+  background:rgba(255,184,107,0.12); padding:0.4rem 0.6rem; border-radius:10px;
+}
+
+/* games area */
+.games-grid{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem;
+}
+.game-tile{
+  border-radius:12px; padding:0.6rem; text-align:center; min-height:100px;
+  display:flex;flex-direction:column;justify-content:center;align-items:center; gap:0.5rem;
+  background:linear-gradient(180deg,#fff,#fbfbff);
+}
+
+/* Parent dashboard specific */
+.parent-header{display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.child-card{display:flex;gap:0.75rem;align-items:center;padding:0.8rem;border-radius:12px}
+.child-avatar{width:64px;height:64px;border-radius:12px; background:#fff; display:flex;justify-content:center;align-items:center}
+.small{font-size:0.85rem;color:var(--muted)}
+
+
+/* small helpers */
+.kid-btn{
+  display:inline-block;padding:0.6rem 0.85rem;border-radius:12px;background:linear-gradient(90deg,var(--accent-1),var(--accent-3));color:white;font-weight:700;text-decoration:none;
+  box-shadow: 0 8px 22px rgba(110,168,254,0.16);
+}
+.kid-btn:focus{outline:3px solid rgba(110,168,254,0.18)}
+.center{text-align:center}
+
+/* Read-along highlighting */
+.highlight-line {
+  background: linear-gradient(90deg, rgba(110,168,254,0.25), rgba(110,168,254,0.05));
+  border-radius: 6px;
+  padding: 4px;
+  transition: background 0.4s ease;
+}
+
+/* Quiz card animation */
+.quiz-animate {
+  animation: quizPulse 0.6s ease forwards;
+}
+
+@keyframes quizPulse {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* Featured Stories Grid */
+.featured-stories-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap:1rem;
+}
+
+.story-card{
+  display:flex;
+  flex-direction:column;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.05), -3px -3px 8px rgba(255,255,255,0.9);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background:#fff;
+}
+
+.story-card img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+}
+
+.story-info{
+  padding:0.6rem 0.8rem;
+}
+
+.story-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+/* Games of the Day Tiles */
+.games-grid a.game-tile{
+  text-decoration:none;
+  color:white;
+  font-weight:700;
+  border-radius:14px;
+  padding:1rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:120px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #6ea8fe, #9ae6b4);
+  box-shadow: 0 8px 22px rgba(110,168,254,0.16);
+}
+
+.games-grid a.game-tile:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+/* Weekly Badge Highlights */
+.badge-highlights{
+  display:flex;
+  gap:0.6rem;
+  flex-wrap:wrap;
+}
+.badge-highlights .badge{
+  background: linear-gradient(180deg,#fff,#f7fbff);
+  box-shadow: 0 6px 14px rgba(255, 184, 107, 0.08);
+  padding:0.45rem 0.75rem;
+  border-radius:12px;
+  font-weight:600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.badge-highlights .badge:hover{
+  transform: scale(1.05);
+  box-shadow: 0 10px 22px rgba(110,168,254,0.18);
+}
+
+
+/* FOOTER */
+.site-footer{margin-top:1.2rem;padding:1rem 0;color:var(--muted);font-size:0.9rem;text-align:center}
+
+/* Responsive breakpoints */
+
+@media (min-width:1024px){
+  .container{padding:2rem}
+  .h1-kid{font-size:2rem}
+  .hero-right{width:320px;height:220px}
+  .games-grid{grid-template-columns: repeat(3, 1fr)}
+}
