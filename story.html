@@ -3,93 +3,93 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Noah's Ark — Bible Kids</title>
+  <title>Stories — Bible Kids</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-  <header class="site-header container" role="banner">
+
+<!-- HEADER -->
+<header class="site-header container">
   <div class="brand">
-    <div class="logo" aria-hidden="true">BK</div>
+    <div class="logo">BK</div>
     <div>
       <div style="font-weight:700">Bible Kids</div>
       <div class="small">Learn • Play • Grow</div>
     </div>
   </div>
 
-  <!-- Hamburger icon -->
-  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+  <button class="nav-toggle"><span></span><span></span><span></span></button>
 
-  <!-- Navigation items -->
-  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <nav class="site-nav">
     <a class="nav-btn" href="index.html">Home</a>
-    <a class="nav-btn" href="story.html">Stories</a>
+    <a class="nav-btn" href="stories.html">Stories</a>
     <a class="nav-btn" href="game.html">Games</a>
-    <a class="nav-btn" href="parent.html">Parent</a>
+    <a class="nav-btn" href="leaderboard.html">Leaderboard</a>
     <a class="nav-btn" href="login.html">Login</a>
   </nav>
 </header>
 
+<main class="container">
 
-  <main class="container" role="main">
-    <article class="card" aria-labelledby="story-title">
-      <div style="display:flex;gap:1rem;align-items:flex-start;flex-wrap:wrap">
-        <div style="flex:1">
-          <h1 id="story-title" class="h1-kid">Noah's Ark</h1>
-          <p class="small">Duration: 8 minutes • Age 4+</p>
+  <h2 class="h1-kid">📚 Bible Stories</h2>
+  <p class="small">Choose a story to read or listen</p>
 
-          <!-- Video / animation placeholder -->
-          <div class="story-thumb" style="margin-top:0.8rem">
-            <img src="https://placehold.co/800x500" alt="Story image placeholder">
+  <!-- CATEGORY FILTERS -->
+  <div class="card" style="margin:1rem 0; padding:1rem;">
+    <div class="row" style="gap:1rem; flex-wrap:wrap;">
+      <button class="kid-btn" style="padding:0.5rem 1rem;">All</button>
+      <button class="kid-btn" style="padding:0.5rem 1rem;">Age 4–6</button>
+      <button class="kid-btn" style="padding:0.5rem 1rem;">Age 7–9</button>
+      <button class="kid-btn" style="padding:0.5rem 1rem;">Age 10+</button>
+      <button class="kid-btn" style="padding:0.5rem 1rem;">With Quiz</button>
+      <button class="kid-btn" style="padding:0.5rem 1rem;">Audio</button>
+    </div>
+  </div>
 
-          </div>
+  <!-- STORIES GRID -->
+  <div class="grid-3">
 
-          <!-- Read-along block (CSS-only fallback) -->
-          <section aria-labelledby="readalongs" style="margin-top:0.9rem">
-            <h2 id="readalongs" style="font-size:1rem;margin:0 0 0.5rem 0">Read-along</h2>
-
-            <div class="card" style="padding:0.8rem">
-              <!-- Without JS we cannot sync audio; provide highlighted lines as sample -->
-              <p class="small">Tip: Use the audio control if available. (Add JS later for word-by-word highlight.)</p>
-
-              <div style="margin-top:0.6rem; line-height:1.6">
-                <div data-read-along>
-                    <p><strong>“In the beginning, God created the heavens and the earth.”</strong></p>
-                    <p>God told Noah to build an ark. Noah listened and worked with his family.</p>
-                    <p>When the rain came, Noah and the animals were safe in the ark.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        <aside style="width:260px; min-width:230px;">
-          <div class="card">
-            <h3 style="margin:0 0 0.6rem 0">Story Info</h3>
-            <div class="small">Age: 4-8</div>
-            <div style="margin-top:0.5rem">
-              <div class="small">Quiz after story</div>
-              <div style="margin-top:0.5rem">
-                <a href="#" class="kid-btn">Start Quiz</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" style="margin-top:0.75rem">
-            <h4 style="margin:0 0 0.5rem 0">Related Games</h4>
-            <div class="small">Match the animals • Ark puzzle</div>
-          </div>
-        </aside>
+    <a href="story.html" class="card story-card">
+      <img src="https://placehold.co/600x400" alt="">
+      <div class="story-info">
+        <div class="story-title">David & Goliath</div>
+        <div class="story-sub">10m • Age 6+</div>
       </div>
-    </article>
+      <div class="badge-list">
+        <div class="badge">Audio</div>
+        <div class="badge">Quiz</div>
+      </div>
+    </a>
 
-    <script src="js/app.js" defer></script>
+    <a href="story.html" class="card story-card">
+      <img src="https://placehold.co/600x400" alt="">
+      <div class="story-info">
+        <div class="story-title">Noah’s Ark</div>
+        <div class="story-sub">12m • Age 5+</div>
+      </div>
+      <div class="badge-list">
+        <div class="badge">New</div>
+      </div>
+    </a>
 
+    <a href="story.html" class="card story-card">
+      <img src="https://placehold.co/600x400" alt="">
+      <div class="story-info">
+        <div class="story-title">Daniel in the Lion’s Den</div>
+        <div class="story-sub">14m • Age 7+</div>
+      </div>
+      <div class="badge-list">
+        <div class="badge">Quiz</div>
+      </div>
+    </a>
 
-    <footer class="site-footer container">© Bible Kids</footer>
-  </main>
+  </div>
+
+</main>
+
+<footer class="site-footer">Bible Kids © 2025</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
