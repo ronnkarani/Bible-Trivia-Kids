@@ -88,3 +88,28 @@ document.querySelectorAll('.quiz-option').forEach(btn => {
     }, 600);
   });
 });
+
+// Scroll-to-top button
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.onscroll = function() {
+  scrollBtn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+};
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// User dropdown toggle
+const userBtn = document.getElementById("userBtn");
+const userMenu = document.getElementById("userDropdownMenu");
+
+userBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  userMenu.classList.toggle("show");
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", () => {
+  userMenu.classList.remove("show");
+});

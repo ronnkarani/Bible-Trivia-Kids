@@ -10,8 +10,9 @@
     <!-- STATIC CSS -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-    <!-- FEATHER ICONS -->
-    <link rel="stylesheet" href="https://cdn-iconscout.com/unicons/css/line.css">
+    <!-- IconScout Unicons CDN -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
 
     </head>
 
@@ -41,13 +42,26 @@
         <a class="nav-btn" href="{% url 'story' %}">Stories</a>
         <a class="nav-btn" href="{% url 'game' %}">Games</a>
         <a class="nav-btn" href="{% url 'parent' %}">Parent</a>
-        <a class="nav-btn" href="{% url 'faq' %}">FAQs</a>
+        <a class="nav-btn" href="{% url 'faq' %}">Faqs</a>
         <a class="nav-btn" href="{% url 'contact' %}">Contact</a>
-        <a class="nav-btn" href="{% url 'login' %}">Login</a>
-        <a class="nav-btn" href="{% url 'register' %}">Register</a>
-        <a class="nav-btn" href="{% url 'custom_admin' %}">Admin</a>
-        <a class="nav-btn" href="{% url 'leaderboard' %}">Leaderboard</a>
+        
     </nav>
+        <div class="user-dropdown">
+            <button id="userBtn">
+                <i class="uil uil-user"></i>
+                <span>Amani</span>
+                <i class="uil uil-angle-down"></i>
+            </button>
+            <div id="userDropdownMenu" class="dropdown-menu">
+                <a href="{% url 'custom_admin' %}">Admin</a>
+                <a href="{% url 'parent' %}">Profile</a>
+                <a href="{% url 'leaderboard' %}">Leaderboard</a>
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+                <a href="">Logout</a>
+            </div>
+            </div>
+
     </header>
 
     <main class="container">
@@ -56,6 +70,9 @@
 
     <!-- JS STATIC -->
     <script src="{% static 'js/app.js' %}" defer></script>
+
+    <!-- Scroll to top button -->
+    <button id="scrollTopBtn" title="Go to top">⬆</button>
 
     <footer class="site-footer container">
     © <strong>Treasure & Friends</strong> — Fun &safe learning for children.
