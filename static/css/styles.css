@@ -33,36 +33,12 @@ body{
   
 }
 
-/* Utility container */
-.container{
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding:1rem;
+i[class^="uil"] {
+  font-size: 1.2rem;
+  color: #ffb86b; /* accent color, can adjust per icon */
+  vertical-align: middle;
+  margin-left: 0.3rem;
 }
-
-/* Simple row/cols */
-.row{
-  display:flex;
-  gap:var(--gap);
-  flex-wrap:wrap;
-}
-.col{flex:1 1 0;}
-
-/* Card base */
-.card{
-  background:var(--card);
-  border-radius:var(--card-radius);
-  box-shadow: 0 6px 18px rgba(12, 24, 60, 0.06);
-  padding:1rem;
-}
-.card-title {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
 
 /* NAV */
 .site-header{
@@ -165,6 +141,37 @@ body{
     background:#f9f9ff;
   }
 }
+
+/* Utility container */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:1rem;
+}
+
+/* Simple row/cols */
+.row{
+  display:flex;
+  gap:var(--gap);
+  flex-wrap:wrap;
+}
+.col{flex:1 1 0;}
+
+/* Card base */
+.card{
+  background:var(--card);
+  border-radius:var(--card-radius);
+  box-shadow: 0 6px 18px rgba(12, 24, 60, 0.06);
+  padding:1rem;
+}
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
 
 /* Kid Dashboard hero */
 .hero{
