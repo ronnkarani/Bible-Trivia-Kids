@@ -75,3 +75,16 @@
     });
   });
 })();
+
+document.querySelectorAll('.quiz-option').forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    // small animation feedback using your "quiz-animate" class
+    btn.classList.add('quiz-animate');
+
+    // later we'll add real logic here
+    setTimeout(() => {
+      btn.classList.remove('quiz-animate');
+    }, 600);
+  });
+});
