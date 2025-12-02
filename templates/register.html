@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Register — Treasure & Friends{% endblock %}
+
+{% block content %}
+
+<div class="card" style="max-width:480px;margin:auto">
+
+  <h2 class="h1-kid" style="text-align:center">Create Account</h2>
+
+  <form style="margin-top:1rem">
+    <label class="small">Parent Email</label>
+    <input type="email" class="card" style="padding:0.8rem; margin-bottom:1rem; width:100%;">
+
+    <label class="small">Child Name</label>
+    <input type="text" class="card" style="padding:0.8rem; margin-bottom:1rem; width:100%;">
+
+    <label class="small">Password</label>
+    <input type="password" class="card" style="padding:0.8rem; margin-bottom:1rem; width:100%;">
+
+    <button class="kid-btn" style="width:100%">Register</button>
+  </form>
+
+</div>
+
+{% endblock %}

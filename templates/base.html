@@ -1,0 +1,65 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>{% block title %}Treasure & Friends{% endblock %}</title>
+
+    <!-- STATIC CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!-- FEATHER ICONS -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    </head>
+
+    <body>
+
+    <header class="site-header container" role="banner">
+    <div class="brand">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Treasure & Friends Logo">
+        </div>
+
+        <div>
+        <div style="font-weight:700">Treasure & Friends</div>
+        <div class="small">Learn • Play • Grow</div>
+        </div>
+    </div>
+
+    <!-- Hamburger icon -->
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+
+    <!-- Navigation items -->
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <a class="nav-btn" href="{% url 'index' %}">Home</a>
+        <a class="nav-btn" href="{% url 'about' %}">About</a>
+        <a class="nav-btn" href="{% url 'story' %}">Stories</a>
+        <a class="nav-btn" href="{% url 'game' %}">Games</a>
+        <a class="nav-btn" href="{% url 'parent' %}">Parent</a>
+        <a class="nav-btn" href="{% url 'faq' %}">FAQs</a>
+        <a class="nav-btn" href="{% url 'contact' %}">Contact</a>
+        <a class="nav-btn" href="{% url 'login' %}">Login</a>
+        <a class="nav-btn" href="{% url 'register' %}">Register</a>
+        <a class="nav-btn" href="{% url 'custom_admin' %}">Admin</a>
+        <a class="nav-btn" href="{% url 'leaderboard' %}">Leaderboard</a>
+    </nav>
+    </header>
+
+    <main class="container">
+    {% block content %}{% endblock %}
+    </main>
+
+    <!-- JS STATIC -->
+    <script src="{% static 'js/app.js' %}" defer></script>
+
+    <footer class="site-footer container">
+    © <strong>Treasure & Friends</strong> — Fun &safe learning for children.
+    </footer>
+
+    </body>
+</html>

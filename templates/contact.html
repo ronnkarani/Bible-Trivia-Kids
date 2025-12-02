@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact — Treasure & Friends{% endblock %}
+
+{% block content %}
+
+<section class="card" style="max-width:600px;margin:auto">
+
+  <h1 class="h1-kid" style="text-align:center">Contact Us</h1>
+
+  <p class="small" style="text-align:center;margin-top:0.5rem">
+    We’d love to hear from you — whether you're a parent, guardian, teacher, or ministry leader.
+  </p>
+
+  <form style="margin-top:1rem">
+    <label class="small">Your Name</label>
+    <input class="card" style="padding:0.8rem; width:100%; border:none; margin-bottom:1rem;" type="text">
+
+    <label class="small">Email</label>
+    <input class="card" style="padding:0.8rem; width:100%; border:none; margin-bottom:1rem;" type="email">
+
+    <label class="small">Message</label>
+    <textarea class="card" style="padding:0.8rem; width:100%; border:none; height:120px; margin-bottom:1rem;"></textarea>
+
+    <button class="kid-btn" style="width:100%">Send Message</button>
+  </form>
+</section>
+
+<section class="card" style="margin-top:1rem; text-align:center;max-width:600px;margin:auto">
+  <h3>Or reach us on WhatsApp</h3>
+  <a href="https://wa.me/254700000000" class="kid-btn" style="margin-top:0.7rem; display:inline-block;">
+    Chat on WhatsApp
+  </a>
+</section>
+
+{% endblock %}

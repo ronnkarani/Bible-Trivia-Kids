@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Quiz — Treasure & Friends{% endblock %}
+
+{% block content %}
+
+<section id="quiz-box" class="card" style="margin-top:1rem">
+
+  <div class="row" style="justify-content:space-between; align-items:center;">
+    <h2 class="h1-kid" style="margin:0">Story Quiz</h2>
+    <div class="small" id="quiz-progress">Question 1 of 5</div>
+  </div>
+
+  <div id="quiz-question" style="margin-top:1rem; font-size:1.1rem; font-weight:600;">
+    What did God ask Noah to build?
+  </div>
+
+  <div id="quiz-options" style="margin-top:1rem; display:flex; flex-direction:column; gap:0.8rem;">
+    <button class="card quiz-option" data-answer="false">A big tower</button>
+    <button class="card quiz-option" data-answer="true">A large ark</button>
+    <button class="card quiz-option" data-answer="false">A golden statue</button>
+    <button class="card quiz-option" data-answer="false">A new city</button>
+  </div>
+
+</section>
+
+<section id="score-box" class="card" style="display:none; margin-top:1.5rem; text-align:center">
+
+  <h2 class="h1-kid">Quiz Completed! <i data-feather="smile"></h2>
+
+  <div id="score-value" style="font-size:2rem; font-weight:800; margin-top:0.5rem;">
+    4 / 5
+  </div>
+
+  <p class="small" style="margin-top:0.5rem">Great job! You’re learning so well.</p>
+
+  <div style="margin-top:1.2rem; display:flex; gap:1rem; justify-content:center;">
+    <a href="{% url 'single_story' %}" class="kid-btn">Back to Story</a>
+    <button id="retry-btn" class="kid-btn">Retry Quiz</button>
+  </div>
+
+</section>
+
+{% endblock %}

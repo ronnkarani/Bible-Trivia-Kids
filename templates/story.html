@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Stories — Treasure & Friends{% endblock %}
+
+{% block content %}
+
+<h2 class="h1-kid">📚 Bible Stories</h2>
+<p class="small">Choose a story to read or listen</p>
+
+<!-- CATEGORY FILTERS -->
+<div class="card" style="margin:1rem 0; padding:1rem;">
+  <div class="row" style="gap:1rem; flex-wrap:wrap;">
+    <button class="kid-btn" style="padding:0.5rem 1rem;">All</button>
+    <button class="kid-btn" style="padding:0.5rem 1rem;">Age 4–6</button>
+    <button class="kid-btn" style="padding:0.5rem 1rem;">Age 7–9</button>
+    <button class="kid-btn" style="padding:0.5rem 1rem;">Age 10+</button>
+    <button class="kid-btn" style="padding:0.5rem 1rem;">With Quiz</button>
+    <button class="kid-btn" style="padding:0.5rem 1rem;">Audio</button>
+  </div>
+</div>
+
+<!-- STORIES GRID -->
+<div class="grid-3">
+
+  <a href="{% url 'single_story' %}" class="card story-card">
+    <img src="https://placehold.co/600x400" alt="">
+    <div class="story-info">
+      <div class="story-title">David & Goliath</div>
+      <div class="story-sub">10m • Age 6+</div>
+    </div>
+    <div class="badge-list">
+      <div class="badge">Audio</div>
+      <div class="badge">Quiz</div>
+    </div>
+  </a>
+
+  <a href="{% url 'single_story' %}" class="card story-card">
+    <img src="https://placehold.co/600x400" alt="">
+    <div class="story-info">
+      <div class="story-title">Noah’s Ark</div>
+      <div class="story-sub">12m • Age 5+</div>
+    </div>
+    <div class="badge-list">
+      <div class="badge">New</div>
+    </div>
+  </a>
+
+  <a href="{% url 'single_story' %}" class="card story-card">
+    <img src="https://placehold.co/600x400" alt="">
+    <div class="story-info">
+      <div class="story-title">Daniel in the Lion’s Den</div>
+      <div class="story-sub">14m • Age 7+</div>
+    </div>
+    <div class="badge-list">
+      <div class="badge">Quiz</div>
+    </div>
+  </a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Noah's Ark — Treasure & Friends{% endblock %}
+
+{% block content %}
+
+<article class="card" aria-labelledby="story-title">
+
+  <div style="display:flex;gap:1rem;align-items:flex-start;flex-wrap:wrap">
+
+    <div style="flex:1">
+      <h1 id="story-title" class="h1-kid">Noah's Ark</h1>
+      <p class="small">Duration: 8 minutes • Age 4+</p>
+
+      <div class="story-thumb" style="margin-top:0.8rem">
+        <img src="https://placehold.co/800x500" alt="Story image placeholder">
+      </div>
+
+      <section aria-labelledby="readalongs" style="margin-top:0.9rem">
+        <h2 id="readalongs" style="font-size:1rem;margin:0 0 0.5rem 0">Read-along</h2>
+
+        <div class="card" style="padding:0.8rem">
+          <p class="small">Tip: Use the audio control if available.</p>
+
+          <div style="margin-top:0.6rem; line-height:1.6">
+            <p><strong>“In the beginning, God created the heavens and the earth.”</strong></p>
+            <p>God told Noah to build an ark. Noah listened and worked with his family.</p>
+            <p>When the rain came, Noah and the animals were safe in the ark.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <aside style="width:260px; min-width:230px;">
+      <div class="card">
+        <h3 style="margin:0 0 0.6rem 0">Story Info</h3>
+        <div class="small">Age: 4-8</div>
+
+        <div style="margin-top:0.5rem">
+          <div class="small">Quiz after story</div>
+          <div style="margin-top:0.5rem">
+            <a href="{% url 'quiz' %}" class="kid-btn">Start Quiz</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:0.75rem">
+        <h4 style="margin:0 0 0.5rem 0">Related Games</h4>
+        <div class="small">Match the animals • Ark puzzle</div>
+      </div>
+    </aside>
+
+  </div>
+</article>
+
+{% endblock %}
